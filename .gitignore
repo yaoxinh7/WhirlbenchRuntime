@@ -1,0 +1,15 @@
+vm-pack.zip
+assets/
+dist/
+node_modules/
+public/
+service/
+dist_b/
+server.py
+start.bat
+compile.mjs
+devjs.mjs
+backup.js
+__tests__
+xxxmain.js
+output.mjs

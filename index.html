@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Babylon Scratch Stage</title>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #canvas-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #000000;
+      /* 移除flex相关，因为我们现在用绝对定位居中 */
+    }
+
+    #renderCanvas,
+    #overlayCanvas {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    #overlayCanvas {
+      background: transparent;
+      pointer-events: auto;
+      touch-action: none;
+      -webkit-touch-callout: none;
+      z-index: 10;
+
+    }
+
+    #renderCanvas {
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="canvas-container">
+    <canvas id="renderCanvas"></canvas>
+    <canvas id="overlayCanvas"></canvas> <!-- 新增透明层 -->
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
